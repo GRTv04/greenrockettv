@@ -129,12 +129,14 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  justify-items: center;
   align-items: center;
   gap: 1rem;
 }
 
 .client-logos img {
   width: 100%;
+  max-width: 100px;
 }
 
 .about-us img,
@@ -144,4 +146,19 @@ main {
 
 .about-us img {
   margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 480px) {
+  .hero .logo-text {
+    text-align: center;
+  }
+  .client-logos img {
+    max-width: 125px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
 }
