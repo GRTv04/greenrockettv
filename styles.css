@@ -60,10 +60,40 @@ main {
   padding: 2rem 1.5rem;
 }
 
-.hero .hero-title .logo-text {
+.top-nav {
+  background: #1c1c1c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.top-nav img {
+  width: 50px;
+  height: 50px;
+}
+
+.top-nav .links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-evenly;
+}
+
+.top-nav .links a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 2rem 0 1rem;
+  position: relative;
+}
+
+.hero .logo-text {
   font-family: "Poppins", sans-serif;
   padding: 0.5rem 2rem;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .logo-text::before,
@@ -86,36 +116,8 @@ main {
   bottom: 0;
 }
 
-.hero {
-  padding: 2rem 0 1rem;
-}
-
-.top-nav {
-  background: #1c1c1c;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.25rem 0;
-}
-
-.top-nav img {
-  width: 50px;
-  height: 50px;
-}
-
-.top-nav .links {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-evenly;
-}
-
-.top-nav .links a {
-  color: #fff;
-  font-weight: 600;
-}
-
-.hero.container {
-  position: relative;
+.hero-content {
+  padding: 0 1.5rem;
 }
 
 .client-logos {
