@@ -136,3 +136,12 @@ main {
 .client-logos img {
   width: 100%;
 }
+
+.about-us img,
+.work-imgs img {
+  border-radius: 15px;
+}
+
+.about-us img {
+  margin-top: 1.5rem;
+}
