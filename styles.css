@@ -40,6 +40,11 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus a:active {
+  text-decoration: underline;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -68,6 +73,9 @@ main {
 .top-nav {
   background: #1c1c1c;
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   justify-content: space-around;
   align-items: center;
   padding: 0.25rem 0;
@@ -90,7 +98,7 @@ main {
 }
 
 .hero {
-  padding: 2rem 0 1rem;
+  padding: 4rem 0 1rem;
   position: relative;
 }
 
