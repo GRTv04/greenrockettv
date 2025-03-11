@@ -97,6 +97,10 @@ main {
   font-weight: 600;
 }
 
+.nav-link.active {
+  text-decoration: underline;
+}
+
 .hero {
   padding: 4rem 0 1rem;
   position: relative;
