@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+}
+
 h1 {
   font-size: 2.75rem;
   line-height: 1.1;
@@ -49,16 +57,37 @@ main {
 }
 
 .container {
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
-.hero .hero-title h1 {
+.hero .hero-title .logo-text {
   font-family: "Poppins", sans-serif;
-  padding: 0.5rem 0;
+  padding: 0.5rem 2rem;
+  position: relative;
 }
 
-.hero-title {
-  margin: 2rem 0 1rem;
+.logo-text::before,
+.logo-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #000;
+}
+
+.logo-text::before {
+  margin-left: 2rem;
+  top: 0;
+}
+
+.logo-text::after {
+  margin-right: 2rem;
+  bottom: 0;
+}
+
+.hero {
+  padding: 2rem 0 1rem;
 }
 
 .top-nav {
@@ -89,26 +118,14 @@ main {
   position: relative;
 }
 
-.line {
-  display: block;
-  position: absolute;
-  height: 5px;
-  width: 95%;
-  background-color: #222;
-}
-
-.line-right {
-  right: 0;
-}
-.line-left {
-  left: 0;
-}
-
 .client-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .client-logos img {
-  width: 90px;
+  width: 100%;
 }
