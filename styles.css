@@ -20,8 +20,13 @@ a {
   font-weight: 500;
 }
 
+.container {
+  padding: 2.5rem 1rem;
+}
+
 h1 {
   font-family: "Poppins", sans-serif;
+  line-height: 1;
 }
 
 header {
@@ -46,4 +51,10 @@ header .links {
 header .links a {
   color: #fff;
   font-weight: 600;
+}
+
+.line {
+  height: 5px;
+  width: 80%;
+  background-color: #222;
 }
