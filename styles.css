@@ -325,14 +325,17 @@ h1 {
 }
 
 #about-us,
-.film-img {
+.film-img,
+#vision {
   position: relative;
 }
 
+.film-img::before,
+.film-img::after,
 #about-us::before,
 #about-us::after,
-.film-img::before,
-.film-img::after {
+#vision::before,
+#vision::after {
   content: "";
   position: absolute;
   left: 0;
@@ -341,8 +344,9 @@ h1 {
   pointer-events: none;
 }
 
+.film-img::before,
 #about-us::before,
-.film-img::before {
+#vision::before {
   top: 0;
   background: linear-gradient(
     to bottom,
@@ -352,8 +356,9 @@ h1 {
   );
 }
 
+.film-img::after,
 #about-us::after,
-.film-img::after {
+#vision::after {
   bottom: 0;
   background: linear-gradient(
     to top,
@@ -361,6 +366,10 @@ h1 {
     rgba(33, 35, 35, 0.8) 40%,
     rgba(33, 35, 35, 0) 100%
   );
+}
+
+.film-img {
+  opacity: 0.85;
 }
 
 .client-logos {
@@ -376,9 +385,33 @@ h1 {
   margin: 0 -10px;
 }
 
+#about-us,
+#vision {
+  padding: 4rem 1.5rem;
+  min-height: 470px;
+}
+
+.about-us::before,
+.vision::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background: #2f2f2f;
+  height: 100%;
+}
+
+.about-us-content,
+.vision-content {
+  position: relative;
+}
+
 #about-us {
   background: url(assets/imgs/about-us-bg.png) no-repeat center center/cover;
-  padding: 4rem 1.5rem 8rem;
+}
+
+#vision {
+  background: url(assets/imgs/vision-bg.png) no-repeat center center/cover;
 }
 
 .work-imgs img {
