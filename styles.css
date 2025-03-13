@@ -324,6 +324,40 @@ h1 {
   height: 100%;
 }
 
+.film-img {
+  position: relative;
+}
+
+.film-img::before,
+.film-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10%;
+  pointer-events: none;
+}
+
+.film-img::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    #212423 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
+}
+
+.film-img::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    #1f2020 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
+}
+
 .client-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -375,6 +409,21 @@ h1 {
   .arts-illus-images .second-row img {
     width: 30%;
     height: 100%;
+  }
+
+  .film-img::before,
+  .film-img::after {
+    height: 15%;
+  }
+
+  .film-img::before {
+    top: 0;
+    background: linear-gradient(
+      to bottom,
+      #242a29 0%,
+      rgba(33, 35, 35, 0.8) 40%,
+      rgba(33, 35, 35, 0) 100%
+    );
   }
 }
 
