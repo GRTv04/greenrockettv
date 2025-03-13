@@ -172,3 +172,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 })
+
+const backToTopButton = document.getElementById("backToTop")
+
+// Show the button when user scrolls down 300px
+window.onscroll = function () {
+  scrollFunction()
+}
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    backToTopButton.classList.add("visible")
+  } else {
+    backToTopButton.classList.remove("visible")
+  }
+}
+
+// Scroll to top when button is clicked
+backToTopButton.addEventListener("click", function () {
+  // For smooth scrolling
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+})
