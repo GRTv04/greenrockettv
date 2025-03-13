@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentSlide = slideIndex
     }
 
-    // Event listeners
+    // Event listeners for buttons
     prevButton.addEventListener("click", () => {
       goToSlide(currentSlide - 1)
     })
@@ -125,5 +125,106 @@ document.addEventListener("DOMContentLoaded", function () {
         goToSlide(currentSlide + 1)
       }, 5000)
     })
+
+    // Touch and mouse swipe functionality
+    let touchStartX = 0
+    let touchEndX = 0
+    let mouseStartX = 0
+    let mouseEndX = 0
+    let isDragging = false
+
+    // Minimum distance to register as a swipe (in pixels)
+    const swipeThreshold = 50
+
+    // Touch events for mobile
+    carousel.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX
+        clearInterval(interval) // Pause autoplay during swipe
+      },
+      { passive: true }
+    )
+
+    carousel.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX
+        handleSwipe()
+
+        // Resume autoplay after swipe
+        interval = setInterval(() => {
+          goToSlide(currentSlide + 1)
+        }, 5000)
+      },
+      { passive: true }
+    )
+
+    // Mouse events for desktop
+    carousel.addEventListener("mousedown", (e) => {
+      mouseStartX = e.clientX
+      isDragging = true
+      clearInterval(interval) // Pause autoplay during swipe
+      carousel.style.cursor = "grabbing"
+
+      // Prevent default drag behavior
+      e.preventDefault()
+    })
+
+    carousel.addEventListener("mousemove", (e) => {
+      if (!isDragging) return
+      // You can add visual feedback here if desired
+    })
+
+    carousel.addEventListener("mouseup", (e) => {
+      if (!isDragging) return
+      mouseEndX = e.clientX
+      isDragging = false
+      carousel.style.cursor = "grab"
+      handleMouseSwipe()
+
+      // Resume autoplay after swipe
+      interval = setInterval(() => {
+        goToSlide(currentSlide + 1)
+      }, 5000)
+    })
+
+    carousel.addEventListener("mouseleave", (e) => {
+      if (isDragging) {
+        mouseEndX = e.clientX
+        isDragging = false
+        carousel.style.cursor = ""
+        handleMouseSwipe()
+      }
+    })
+
+    // Set initial cursor style
+    carousel.style.cursor = "grab"
+
+    // Handle touch swipe
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX
+
+      if (swipeDistance > swipeThreshold) {
+        // Swiped right - go to previous slide
+        goToSlide(currentSlide - 1)
+      } else if (swipeDistance < -swipeThreshold) {
+        // Swiped left - go to next slide
+        goToSlide(currentSlide + 1)
+      }
+    }
+
+    // Handle mouse swipe
+    function handleMouseSwipe() {
+      const swipeDistance = mouseEndX - mouseStartX
+
+      if (swipeDistance > swipeThreshold) {
+        // Swiped right - go to previous slide
+        goToSlide(currentSlide - 1)
+      } else if (swipeDistance < -swipeThreshold) {
+        // Swiped left - go to next slide
+        goToSlide(currentSlide + 1)
+      }
+    }
   })
 })
