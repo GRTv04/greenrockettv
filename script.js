@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelectorAll(".carousel")
 
   carousel.forEach((carousel) => {
-    const prevButton = document.createElement("button")
-    prevButton.className = "carousel-nav prev"
-    prevButton.innerHTML = "&larr;"
-    prevButton.setAttribute("aria-label", "Previous slide")
+    // const prevButton = document.createElement("button")
+    // prevButton.className = "carousel-nav prev"
+    // prevButton.innerHTML = "&larr;"
+    // prevButton.setAttribute("aria-label", "Previous slide")
 
-    const nextButton = document.createElement("button")
-    nextButton.className = "carousel-nav next"
-    nextButton.innerHTML = "&rarr;"
-    nextButton.setAttribute("aria-label", "Next slide")
+    // const nextButton = document.createElement("button")
+    // nextButton.className = "carousel-nav next"
+    // nextButton.innerHTML = "&rarr;"
+    // nextButton.setAttribute("aria-label", "Next slide")
 
     const indicators = document.createElement("div")
     indicators.className = "carousel-indicators"
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
       indicators.appendChild(dot)
     })
 
-    carousel.appendChild(prevButton)
-    carousel.appendChild(nextButton)
+    // carousel.appendChild(prevButton)
+    // carousel.appendChild(nextButton)
     carousel.appendChild(indicators)
 
     let currentSlide = 0
@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", function () {
       currentSlide = slideIndex
     }
 
-    prevButton.addEventListener("click", () => {
-      goToSlide(currentSlide - 1)
-    })
+    // prevButton.addEventListener("click", () => {
+    //   goToSlide(currentSlide - 1)
+    // })
 
-    nextButton.addEventListener("click", () => {
-      goToSlide(currentSlide + 1)
-    })
+    // nextButton.addEventListener("click", () => {
+    //   goToSlide(currentSlide + 1)
+    // })
 
     const dots = indicators.querySelectorAll(".indicator")
     dots.forEach((dot) => {
