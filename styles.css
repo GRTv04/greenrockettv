@@ -308,7 +308,7 @@ h1 {
   }
   45%,
   55% {
-    transform: translateX(-50%);
+    transform: translateX(-80%);
   }
 }
 
@@ -412,6 +412,17 @@ h1 {
   .arts-illus-images .second-row img {
     width: 30%;
     height: 100%;
+  }
+  @keyframes scroll {
+    0%,
+    90%,
+    100% {
+      transform: translateX(0);
+    }
+    45%,
+    55% {
+      transform: translateX(-30%);
+    }
   }
 
   .film-img::before,
