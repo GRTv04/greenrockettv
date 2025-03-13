@@ -44,6 +44,7 @@ h2 {
 }
 
 h2,
+h3,
 p,
 a {
   font-family: "Montserrat", sans-serif;
@@ -68,6 +69,11 @@ a:focus a:active {
 
 .bg-dark {
   background: #1c1c1c;
+}
+
+.h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .uppercase {
