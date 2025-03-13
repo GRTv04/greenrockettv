@@ -344,6 +344,14 @@ h1 {
   pointer-events: none;
 }
 
+#vision::before {
+  height: 40%;
+}
+
+#vision::after {
+  height: 55%;
+}
+
 .film-img::before,
 #about-us::before,
 #vision::before {
@@ -387,7 +395,7 @@ h1 {
 
 #about-us,
 #vision {
-  padding: 4rem 1.5rem;
+  padding: 7rem 1.5rem;
   min-height: 470px;
 }
 
