@@ -33,7 +33,7 @@ img {
 }
 
 h1 {
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   line-height: 1.1;
 }
 
@@ -44,12 +44,13 @@ h2 {
 }
 
 h3 {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   font-weight: 500;
 }
 
 h2,
 h3,
+h4,
 p,
 a {
   font-family: "Montserrat", sans-serif;
@@ -77,7 +78,7 @@ a:focus a:active {
 }
 
 .h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
 }
 
@@ -422,12 +423,34 @@ h1 {
   background: url(assets/imgs/vision-bg.png) no-repeat center center/cover;
 }
 
-.work-imgs img {
-  border-radius: 15px;
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
 }
 
-.about-us img {
-  margin-top: 1.5rem;
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.team-member img {
+  border-radius: 50%;
+  width: 75px;
+}
+
+.team-member h4,
+.team-member p {
+  font-size: 8px;
+  text-align: center;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .nav-logo {
+    padding-top: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -443,6 +466,22 @@ h1 {
   h2 {
     font-size: 1.25rem;
   }
+
+  h1 {
+    font-size: 2.75rem;
+    line-height: 1.1;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    font-weight: 500;
+  }
+
+  .h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
   .nav-logo img {
     width: 50px;
   }
@@ -485,10 +524,17 @@ h1 {
       rgba(33, 35, 35, 0) 100%
     );
   }
-}
 
-@supports (-webkit-touch-callout: none) {
-  .nav-logo {
-    padding-top: 1.5rem;
+  .team-members {
+    gap: 2rem;
+  }
+
+  .team-member img {
+    width: 100px;
+  }
+
+  .team-member h4,
+  .team-member p {
+    font-size: 14px;
   }
 }
