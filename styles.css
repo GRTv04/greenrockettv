@@ -289,6 +289,19 @@ h1 {
   text-align: center;
 }
 
+.arts-illus-images .first-row,
+.arts-illus-images .second-row {
+  display: flex;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.arts-illus-images .first-row img,
+.arts-illus-images .second-row img {
+  width: 25%;
+  height: 100%;
+}
+
 .client-logos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
