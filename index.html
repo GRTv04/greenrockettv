@@ -7,21 +7,32 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="top-nav">
-      <a href="#hero"><img src="assets/imgs/logo.png" alt="GreenRocketTV Logo" /></a>
-      <div class="links">
-        <a href="#clients" class="uppercase nav-link">clients</a>
-        <a href="#about-us" class="uppercase nav-link">about us</a>
-        <a href="#services" class="uppercase nav-link">services</a>
-        <a href="#contact" class="uppercase nav-link">contact</a>
+    <header>
+      <div class="nav-logo bg-dark">
+        <a href="#hero"><img src="assets/imgs/logo.png" alt="GreenRocketTV Logo" /></a>
+        <div class="logo-text">
+          <a href="#hero">
+            <h2 class="text-norm uppercase">GreenRocketTV</h2>
+            <h2 class="uppercase">Production</h2>
+          </a>
+        </div>
       </div>
     </header>
-    <main>
-        <section id="hero" class="hero">
+      <nav class="sticky-nav bg-dark">
+        <ul class="links">
+          <li><a href="#clients" class="uppercase nav-link">clients</a></li>
+          <li><a href="#about-us" class="uppercase nav-link">about us</a></li>
+          <li><a href="#services" class="uppercase nav-link">services</a></li>
+          <li><a href="#contact" class="uppercase nav-link">contact</a></li>
+        </ul>
+      </nav>
+    
+    <main class="main gradient">
+      <div class="sections">
+        <section id="hero" class="hero container">
           <div class="hero-title">
-            <span class="line line-right"></span>
-            <h1 class="logo-text uppercase"><span class="text-norm">GreenRocketTV</span> Production</h1>
-            <span class="line line-left"></span>
+            <h1>A Creative Production 
+              Studio based in Aizawl Mizoram</h1>
           </div>
           <div class="hero-content">
             <h2 class="uppercase text-center">Where Creativity Meets innovation</h2>
@@ -104,6 +115,7 @@
             <img src="assets/imgs/works/work-06.png" alt="Sean Kingston Concert">
         </div>
       </section>
+    </div>
     </main>
     <script src="script.js"></script>
   </body>
