@@ -335,7 +335,8 @@ h1 {
 
 #about-us,
 .film-img,
-#vision {
+#vision,
+.team.container {
   position: relative;
 }
 
@@ -344,12 +345,14 @@ h1 {
 #about-us::before,
 #about-us::after,
 #vision::before,
-#vision::after {
+#vision::after,
+.team.container::before,
+.team.container::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  height: 10%;
+  height: 15%;
   pointer-events: none;
 }
 
@@ -363,7 +366,8 @@ h1 {
 
 .film-img::before,
 #about-us::before,
-#vision::before {
+#vision::before,
+.team.container::before {
   top: 0;
   background: linear-gradient(
     to bottom,
@@ -385,8 +389,19 @@ h1 {
   );
 }
 
+.team.container::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    #292f2d 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
+}
+
 .film-img {
   opacity: 0.85;
+  margin: 0 -1.5rem;
 }
 
 .client-logos {
@@ -429,6 +444,11 @@ h1 {
 
 #vision {
   background: url(assets/imgs/vision-bg.png) no-repeat center center/cover;
+}
+
+.team.container {
+  background: url(assets/imgs/team-bg.png) no-repeat center center/cover;
+  padding: 10rem 1.5rem 4rem;
 }
 
 .team-members {
