@@ -188,3 +188,9 @@ h1 {
     gap: 2rem;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .nav-logo {
+    padding-top: 1.5rem;
+  }
+}
