@@ -20,12 +20,9 @@ window.addEventListener("scroll", () => {
   })
 })
 
-// First, add the necessary HTML structure for navigation
-
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelectorAll(".carousel")
   carousel.forEach((carousel) => {
-    // Add navigation arrows
     const prevButton = document.createElement("button")
     prevButton.className = "carousel-nav prev"
     prevButton.innerHTML = "&larr;"
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     nextButton.innerHTML = "&rarr;"
     nextButton.setAttribute("aria-label", "Next slide")
 
-    // Add indicator dots
     const indicators = document.createElement("div")
     indicators.className = "carousel-indicators"
 
@@ -50,16 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
       indicators.appendChild(dot)
     })
 
-    // Append new elements to carousel
     carousel.appendChild(prevButton)
     carousel.appendChild(nextButton)
     carousel.appendChild(indicators)
 
-    // Initialize the carousel
     let currentSlide = 0
     const totalSlides = items.length
 
-    // Show first slide, hide others
     items.forEach((item, index) => {
       if (index !== 0) {
         item.style.display = "none"
@@ -68,32 +61,25 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
 
-    // Function to change slides
     const goToSlide = (slideIndex) => {
-      // Handle circular navigation
       if (slideIndex < 0) slideIndex = totalSlides - 1
       if (slideIndex >= totalSlides) slideIndex = 0
 
-      // Hide all slides
       items.forEach((item) => {
         item.style.display = "none"
         item.classList.remove("active")
       })
 
-      // Show the target slide
       items[slideIndex].style.display = "block"
       items[slideIndex].classList.add("active")
 
-      // Update indicators
       const dots = indicators.querySelectorAll(".indicator")
       dots.forEach((dot) => dot.classList.remove("active"))
       dots[slideIndex].classList.add("active")
 
-      // Update current slide index
       currentSlide = slideIndex
     }
 
-    // Event listeners for buttons
     prevButton.addEventListener("click", () => {
       goToSlide(currentSlide - 1)
     })
@@ -102,7 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
       goToSlide(currentSlide + 1)
     })
 
-    // Add event listeners to indicators
     const dots = indicators.querySelectorAll(".indicator")
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
@@ -110,15 +95,29 @@ document.addEventListener("DOMContentLoaded", function () {
       })
     })
 
-    // Touch and mouse swipe functionality
     let touchStartX = 0
     let touchEndX = 0
     let mouseStartX = 0
     let mouseEndX = 0
     let isDragging = false
 
-    // Minimum distance to register as a swipe (in pixels)
     const swipeThreshold = 50
+
+    carousel.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX
+      },
+      { passive: true }
+    )
+    carousel.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX
+        handleSwipe()
+      },
+      { passive: true }
+    )
 
     carousel.addEventListener("mousemove", (e) => {
       if (!isDragging) return
@@ -141,32 +140,32 @@ document.addEventListener("DOMContentLoaded", function () {
         handleMouseSwipe()
       }
     })
-
-    // Set initial cursor style
     carousel.style.cursor = "grab"
 
-    // Handle touch swipe
+    carousel.addEventListener("mousedown", (e) => {
+      mouseStartX = e.clientX
+      isDragging = true
+      carousel.style.cursor = "grabbing"
+
+      e.preventDefault()
+    })
+
     function handleSwipe() {
       const swipeDistance = touchEndX - touchStartX
 
       if (swipeDistance > swipeThreshold) {
-        // Swiped right - go to previous slide
         goToSlide(currentSlide - 1)
       } else if (swipeDistance < -swipeThreshold) {
-        // Swiped left - go to next slide
         goToSlide(currentSlide + 1)
       }
     }
 
-    // Handle mouse swipe
     function handleMouseSwipe() {
       const swipeDistance = mouseEndX - mouseStartX
 
       if (swipeDistance > swipeThreshold) {
-        // Swiped right - go to previous slide
         goToSlide(currentSlide - 1)
       } else if (swipeDistance < -swipeThreshold) {
-        // Swiped left - go to next slide
         goToSlide(currentSlide + 1)
       }
     }
