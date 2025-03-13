@@ -616,6 +616,11 @@ h1 {
     width: 30%;
     height: 100%;
   }
+
+  .client-logos {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
   @keyframes scroll {
     0%,
     90%,
