@@ -496,7 +496,7 @@ h1 {
 
 .footer-row {
   display: grid;
-  gap: 6rem;
+  gap: 3rem;
   grid-template-columns: 1fr 1fr;
 }
 
@@ -654,5 +654,9 @@ h1 {
   .team-member h4,
   .team-member p {
     font-size: 14px;
+  }
+
+  .footer-row {
+    gap: 6rem;
   }
 }
