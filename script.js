@@ -110,22 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
     })
 
-    // Auto-play functionality (optional)
-    let interval = setInterval(() => {
-      goToSlide(currentSlide + 1)
-    }, 5000) // Change slide every 5 seconds
-
-    // Pause on hover
-    carousel.addEventListener("mouseenter", () => {
-      clearInterval(interval)
-    })
-
-    carousel.addEventListener("mouseleave", () => {
-      interval = setInterval(() => {
-        goToSlide(currentSlide + 1)
-      }, 5000)
-    })
-
     // Touch and mouse swipe functionality
     let touchStartX = 0
     let touchEndX = 0
@@ -135,41 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Minimum distance to register as a swipe (in pixels)
     const swipeThreshold = 50
-
-    // Touch events for mobile
-    carousel.addEventListener(
-      "touchstart",
-      (e) => {
-        touchStartX = e.changedTouches[0].screenX
-        clearInterval(interval) // Pause autoplay during swipe
-      },
-      { passive: true }
-    )
-
-    carousel.addEventListener(
-      "touchend",
-      (e) => {
-        touchEndX = e.changedTouches[0].screenX
-        handleSwipe()
-
-        // Resume autoplay after swipe
-        interval = setInterval(() => {
-          goToSlide(currentSlide + 1)
-        }, 5000)
-      },
-      { passive: true }
-    )
-
-    // Mouse events for desktop
-    carousel.addEventListener("mousedown", (e) => {
-      mouseStartX = e.clientX
-      isDragging = true
-      clearInterval(interval) // Pause autoplay during swipe
-      carousel.style.cursor = "grabbing"
-
-      // Prevent default drag behavior
-      e.preventDefault()
-    })
 
     carousel.addEventListener("mousemove", (e) => {
       if (!isDragging) return
@@ -182,11 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
       isDragging = false
       carousel.style.cursor = "grab"
       handleMouseSwipe()
-
-      // Resume autoplay after swipe
-      interval = setInterval(() => {
-        goToSlide(currentSlide + 1)
-      }, 5000)
     })
 
     carousel.addEventListener("mouseleave", (e) => {
