@@ -191,7 +191,7 @@ h1 {
 .carousel-item img {
   border-radius: 20px;
   max-width: 100%;
-  max-height: 180px;
+  max-height: 200px;
   object-fit: cover;
   margin: 0 auto;
   pointer-events: none; /* Prevents image dragging */
