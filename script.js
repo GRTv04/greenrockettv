@@ -22,6 +22,7 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelectorAll(".carousel")
+
   carousel.forEach((carousel) => {
     const prevButton = document.createElement("button")
     prevButton.className = "carousel-nav prev"
