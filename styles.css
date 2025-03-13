@@ -490,10 +490,13 @@ h1 {
 .footer {
   display: grid;
   gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer-row {
   display: grid;
+  gap: 6rem;
   grid-template-columns: 1fr 1fr;
 }
 
