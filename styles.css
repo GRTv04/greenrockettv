@@ -48,6 +48,10 @@ h3 {
   font-weight: 500;
 }
 
+h4 {
+  font-size: 0.85rem;
+}
+
 h2,
 h3,
 h4,
@@ -80,6 +84,10 @@ a:focus a:active {
 .h2 {
   font-size: 1.75rem;
   font-weight: 700;
+}
+
+.h3 {
+  font-size: 1.25rem;
 }
 
 .uppercase {
@@ -447,12 +455,58 @@ h1 {
   text-align: center;
 }
 
+.story.container {
+  padding-bottom: 5rem;
+}
+
 .story p {
   padding: 0 1rem;
 }
 
 .story p + p {
   margin-top: 1rem;
+}
+
+.footer {
+  display: grid;
+  gap: 3rem;
+}
+
+.footer-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer-column h2 {
+  margin: 0 auto;
+}
+
+.footer-column .h3 {
+  margin-bottom: 0.5rem;
+}
+
+.social {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social img {
+  width: 30px;
+}
+
+.powered-by {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.powered-by img {
+  width: 50px;
+}
+
+.powered-by a {
+  text-decoration: underline;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -488,6 +542,10 @@ h1 {
   .h2 {
     font-size: 2.5rem;
     font-weight: 700;
+  }
+
+  .h3 {
+    font-size: 1.5rem;
   }
 
   .nav-logo img {
