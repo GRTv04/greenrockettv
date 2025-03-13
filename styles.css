@@ -532,6 +532,35 @@ h1 {
   text-decoration: underline;
 }
 
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s, background-color 0.3s;
+  z-index: 1000;
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+  background-color: #555;
+}
+
+#backToTop.visible {
+  opacity: 1;
+}
+
 @supports (-webkit-touch-callout: none) {
   .nav-logo {
     padding-top: 1.5rem;
