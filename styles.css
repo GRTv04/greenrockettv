@@ -618,7 +618,8 @@ h1 {
   }
 
   .client-logos {
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5rem;
   }
 
   @keyframes scroll {
