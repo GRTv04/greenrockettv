@@ -191,18 +191,11 @@ h1 {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  max-height: 200px;
 }
 
 .swiper-slide img,
 .two-item img {
   margin-bottom: 0.75rem;
-}
-
-@media screen and (min-width: 768px) {
-  .swiper-slide img {
-    max-height: 370px;
-  }
 }
 
 .swiper-slide img,
