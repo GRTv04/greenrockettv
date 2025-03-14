@@ -171,125 +171,31 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-.carousel-item img,
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide img,
 .two-item img,
 .client-logos {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.carousel {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
-  touch-action: pan-y; /* Allow vertical scrolling but capture horizontal gestures */
-  user-select: none; /* Prevent text selection during swipe */
-}
-
-.carousel-item {
-  padding: 1.5rem 0 1rem;
-  transition: opacity 0.5s ease;
-  text-align: center;
-}
-
-.carousel-item img {
-  border-radius: 20px;
-  max-width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin: 0 auto;
-  pointer-events: none; /* Prevents image dragging */
-}
-
-.carousel-item p {
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-.carousel-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.75);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 1;
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
-
-.carousel-nav:hover {
-  opacity: 1;
-}
-
-.carousel-nav.prev {
-  left: 10px;
-}
-
-.carousel-nav.next {
-  right: 10px;
-}
-
-/* Indicator dots */
-.carousel-indicators {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.indicator.active {
-  background: white;
-}
-
-/* Visual feedback during swipe */
-.swiping .carousel-item {
-  transition: none; /* Disable transitions during active swipe */
-}
-
-/* Animation for transition */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.carousel-item.active {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Make sure carousel captures pointer events */
-* {
-  -webkit-user-drag: none; /* Safari */
-}
-
-/* Hide arrows on very small screens but keep swipe */
-@media (max-width: 480px) {
-  .carousel-nav {
-    width: 30px;
-    height: 30px;
-    font-size: 16px;
-  }
 }
 
 .two-item {
@@ -586,9 +492,6 @@ h1 {
 @media screen and (min-width: 480px) {
   .client-logos img {
     max-width: 125px;
-  }
-  .carousel-item img {
-    max-height: 370px;
   }
 }
 
