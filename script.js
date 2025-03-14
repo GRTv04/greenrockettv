@@ -24,6 +24,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelectorAll(".carousel")
 
   carousel.forEach((carousel) => {
+    // const prevButton = document.createElement("button")
+    // prevButton.className = "carousel-nav prev"
+    // prevButton.innerHTML = "&larr;"
+    // prevButton.setAttribute("aria-label", "Previous slide")
+
+    // const nextButton = document.createElement("button")
+    // nextButton.className = "carousel-nav next"
+    // nextButton.innerHTML = "&rarr;"
+    // nextButton.setAttribute("aria-label", "Next slide")
+
     const indicators = document.createElement("div")
     indicators.className = "carousel-indicators"
 
@@ -37,54 +47,47 @@ document.addEventListener("DOMContentLoaded", function () {
       indicators.appendChild(dot)
     })
 
+    // carousel.appendChild(prevButton)
+    // carousel.appendChild(nextButton)
     carousel.appendChild(indicators)
 
     let currentSlide = 0
     const totalSlides = items.length
 
-    // Set up the initial position of each slide
     items.forEach((item, index) => {
-      // Position all slides in a row
-      item.style.position = "absolute"
-      item.style.left = index === 0 ? "0%" : "100%"
-      item.style.display = "block"
+      if (index !== 0) {
+        item.style.display = "none"
+      } else {
+        item.style.display = "block"
+      }
     })
 
     const goToSlide = (slideIndex) => {
       if (slideIndex < 0) slideIndex = totalSlides - 1
       if (slideIndex >= totalSlides) slideIndex = 0
 
-      const direction = slideIndex > currentSlide ? 1 : -1
-      // Handle wrap-around cases
-      if (currentSlide === totalSlides - 1 && slideIndex === 0) direction = 1
-      if (currentSlide === 0 && slideIndex === totalSlides - 1) direction = -1
+      items.forEach((item) => {
+        item.style.display = "none"
+        item.classList.remove("active")
+      })
 
-      // Current slide moves out
-      items[currentSlide].style.transition = "left 0.5s ease-in-out"
-      items[currentSlide].style.left = -direction * 100 + "%"
-
-      // New slide comes in
-      items[slideIndex].style.transition = "left 0.5s ease-in-out"
-      items[slideIndex].style.left = "0%"
-
-      // Update active classes
-      items[currentSlide].classList.remove("active")
+      items[slideIndex].style.display = "block"
       items[slideIndex].classList.add("active")
 
       const dots = indicators.querySelectorAll(".indicator")
       dots.forEach((dot) => dot.classList.remove("active"))
       dots[slideIndex].classList.add("active")
 
-      // Reset the position of all other slides
-      items.forEach((item, index) => {
-        if (index !== slideIndex && index !== currentSlide) {
-          item.style.transition = "none"
-          item.style.left = direction > 0 ? "100%" : "-100%"
-        }
-      })
-
       currentSlide = slideIndex
     }
+
+    // prevButton.addEventListener("click", () => {
+    //   goToSlide(currentSlide - 1)
+    // })
+
+    // nextButton.addEventListener("click", () => {
+    //   goToSlide(currentSlide + 1)
+    // })
 
     const dots = indicators.querySelectorAll(".indicator")
     dots.forEach((dot) => {
