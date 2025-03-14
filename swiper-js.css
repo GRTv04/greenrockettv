@@ -1,0 +1,20 @@
+.swiper-slide {
+  background: transparent;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 30px;
+}
+
+.swiper-pagination-bullet-active,
+.swiper-pagination-bullet {
+  background: #fff;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
