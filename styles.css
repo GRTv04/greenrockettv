@@ -194,6 +194,11 @@ h1 {
   max-height: 200px;
 }
 
+.swiper-slide img,
+.two-item img {
+  margin-bottom: 0.75rem;
+}
+
 @media screen and (min-width: 480px) {
   .swiper-slide img {
     max-height: 370px;
