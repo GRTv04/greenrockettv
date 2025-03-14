@@ -239,7 +239,7 @@ h1 {
 /* Indicator dots */
 .carousel-indicators {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
