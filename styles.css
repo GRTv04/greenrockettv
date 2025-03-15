@@ -115,8 +115,12 @@ body {
   margin: 0 auto;
 }
 
-.container {
+section.container {
   padding: 4rem 1.5rem 0;
+}
+
+.container-padding {
+  padding: 0 1.5rem;
 }
 
 .nav-logo {
