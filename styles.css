@@ -110,6 +110,19 @@ body {
   background: #e9e9e7;
 }
 
+.button-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50px;
+}
+
 .sections {
   max-width: 800px;
   margin: 0 auto;
