@@ -403,10 +403,6 @@ h1 {
   padding-bottom: 5rem;
 }
 
-.story p {
-  padding: 0 1rem;
-}
-
 .story p + p {
   margin-top: 1rem;
 }
