@@ -282,73 +282,6 @@ h1 {
   position: relative;
 }
 
-.film-img::before,
-.film-img::after,
-#about-us::before,
-#about-us::after,
-#vision::before,
-#vision::after,
-.team.container::before,
-.team.container::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 15%;
-  pointer-events: none;
-}
-
-#vision::before {
-  height: 40%;
-}
-
-#vision::after {
-  height: 55%;
-}
-
-.film-img::before {
-  background: linear-gradient(
-    to bottom,
-    #212423 0%,
-    rgba(33, 35, 35, 0.8) 40%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-#about-us::before,
-#vision::before,
-.team.container::before {
-  top: 0;
-  background: linear-gradient(
-    to bottom,
-    #323333 0%,
-    rgba(33, 35, 35, 0.8) 40%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-.film-img::after,
-#about-us::after,
-#vision::after {
-  bottom: 0;
-  background: linear-gradient(
-    to top,
-    #1f2020 0%,
-    rgba(33, 35, 35, 0.8) 40%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-.team.container::after {
-  bottom: 0;
-  background: linear-gradient(
-    to top,
-    #292f2d 0%,
-    rgba(33, 35, 35, 0.8) 40%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
 .film-img {
   opacity: 0.85;
   margin: 0 -1.5rem;
@@ -593,16 +526,6 @@ h1 {
   .film-img::before,
   .film-img::after {
     height: 15%;
-  }
-
-  .film-img::before {
-    top: 0;
-    background: linear-gradient(
-      to bottom,
-      #242a29 0%,
-      rgba(33, 35, 35, 0.8) 40%,
-      rgba(33, 35, 35, 0) 100%
-    );
   }
 
   .team-members {
