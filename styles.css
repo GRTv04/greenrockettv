@@ -212,7 +212,6 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px;
 }
 
 .swiper-slide img,
@@ -223,6 +222,7 @@ h1 {
 .swiper-slide img,
 .two-item img,
 .client-logos {
+  border-radius: 25px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -306,14 +306,22 @@ h1 {
   height: 55%;
 }
 
-.film-img::before,
+.film-img::before {
+  background: linear-gradient(
+    to bottom,
+    #212423 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
+}
+
 #about-us::before,
 #vision::before,
 .team.container::before {
   top: 0;
   background: linear-gradient(
     to bottom,
-    #212423 0%,
+    #323333 0%,
     rgba(33, 35, 35, 0.8) 40%,
     rgba(33, 35, 35, 0) 100%
   );
@@ -348,7 +356,6 @@ h1 {
 
 .client-logos {
   background-color: #fff;
-  border-radius: 20px;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -524,7 +531,7 @@ h1 {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   h2 {
     font-size: 1.25rem;
   }
