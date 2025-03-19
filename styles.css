@@ -196,7 +196,7 @@ h1 {
 .music-videos {
   overflow: hidden;
 }
-s .mv-row {
+.mv-row {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
