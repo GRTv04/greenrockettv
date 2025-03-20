@@ -295,35 +295,6 @@ h1 {
   margin: 0 -10px;
 }
 
-#about-us,
-#vision {
-  padding: 7rem 1.5rem;
-  min-height: 470px;
-}
-
-.about-us::before,
-.vision::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-  background: #2f2f2f;
-  height: 100%;
-}
-
-.about-us-content,
-.vision-content {
-  position: relative;
-}
-
-#about-us {
-  background: url(assets/imgs/about-us-bg.png) no-repeat center center/cover;
-}
-
-#vision {
-  background: url(assets/imgs/vision-bg.png) no-repeat center center/cover;
-}
-
 .team.container {
   background: url(assets/imgs/team-bg.png) no-repeat center center/cover;
   padding: 10rem 1.5rem 4rem;

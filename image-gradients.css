@@ -1,6 +1,4 @@
 .film-img,
-#about-us,
-#vision,
 .team.container,
 #contact {
   position: relative;
@@ -8,10 +6,6 @@
 
 .film-img::before,
 .film-img::after,
-#about-us::before,
-#about-us::after,
-#vision::before,
-#vision::after,
 .team.container::before,
 .team.container::after,
 #contact::before {
@@ -37,49 +31,6 @@
   background: linear-gradient(
     to top,
     #292929 0%,
-    rgba(33, 35, 35, 0.8) 40%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-#about-us::before {
-  top: 0;
-  background: linear-gradient(
-    to bottom,
-    #323332 0%,
-    rgba(48, 52, 51, 0.8) 20%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-#about-us::after {
-  bottom: 0;
-  height: 40%;
-  background: linear-gradient(
-    to top,
-    #323232 0%,
-    rgba(33, 35, 35, 0.8) 20%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-#vision::before {
-  top: 0;
-  height: 40%;
-  background: linear-gradient(
-    to bottom,
-    #323333 0%,
-    rgba(33, 35, 35, 0.8) 20%,
-    rgba(33, 35, 35, 0) 100%
-  );
-}
-
-#vision::after {
-  bottom: 0;
-  height: 50%;
-  background: linear-gradient(
-    to top,
-    #1f2020 0%,
     rgba(33, 35, 35, 0.8) 40%,
     rgba(33, 35, 35, 0) 100%
   );
