@@ -198,6 +198,89 @@ h1 {
   height: 100%;
 }
 
+.music-videos {
+  overflow: hidden;
+}
+
+.mv-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  user-select: none;
+}
+
+.mv-row:active {
+  cursor: grabbing;
+}
+
+.mv-row.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.mv-row.grabbing {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+
+.mv-row a {
+  flex: 1 0 auto;
+  scroll-snap-align: start;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-user-drag: none; /* Prevent link dragging in Safari/Chrome */
+  user-select: none; /* Prevents text selection */
+  position: relative;
+}
+
+.mv-row .mv-thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  pointer-events: none; /* Prevents drag conflicts with images */
+  -webkit-user-drag: none; /* Prevent image dragging */
+  user-select: none; /* Prevents selection */
+  opacity: 0.65;
+  transition: opacity 0.4s;
+}
+
+.mv-link:hover .mv-thumbnail,
+.mv-link:active .mv-thumbnail {
+  opacity: 1;
+}
+
+.mv-row .play-btn {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p.mv-text {
+  font-size: 12px;
+  position: absolute;
+  bottom: 8px;
+  text-align: center;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
