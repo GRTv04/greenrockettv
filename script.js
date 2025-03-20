@@ -82,6 +82,65 @@ function scrollFunction() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".ads-container")
+  const links = container.querySelectorAll("a")
+
+  // Variables to track dragging
+  let isDragging = false
+  let startX
+  let startScrollLeft
+  let scrollThreshold = 5 // pixels of movement to consider as a drag
+
+  // Mouse events for desktop
+  container.addEventListener("mousedown", (e) => {
+    isDragging = false
+    startX = e.pageX
+    startScrollLeft = container.scrollLeft
+    container.style.cursor = "grabbing"
+  })
+
+  container.addEventListener("mousemove", (e) => {
+    if (e.buttons !== 1) return // Not pressing mouse button
+
+    const dx = e.pageX - startX
+    if (Math.abs(dx) > scrollThreshold) {
+      isDragging = true
+      container.scrollLeft = startScrollLeft - dx
+    }
+  })
+
+  container.addEventListener("mouseup", () => {
+    container.style.cursor = "grab"
+  })
+
+  // Prevent link clicks if dragging
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (isDragging) {
+        e.preventDefault()
+      }
+    })
+  })
+
+  // Touch events for mobile
+  let touchStartX
+  let touchStartScrollLeft
+
+  container.addEventListener("touchstart", (e) => {
+    isDragging = false
+    touchStartX = e.touches[0].pageX
+    touchStartScrollLeft = container.scrollLeft
+  })
+
+  container.addEventListener("touchmove", (e) => {
+    const dx = e.touches[0].pageX - touchStartX
+    if (Math.abs(dx) > scrollThreshold) {
+      isDragging = true
+    }
+  })
+})
+
 // Scroll to top when button is clicked
 backToTopButton.addEventListener("click", function () {
   // For smooth scrolling
