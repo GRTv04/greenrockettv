@@ -296,7 +296,6 @@ p.mv-text {
   user-select: none;
 }
 
-/* Hide scrollbar */
 .ads-container::-webkit-scrollbar {
   display: none;
 }
@@ -358,6 +357,23 @@ p.mv-text {
   opacity: 0.8;
 }
 
+.photography-images .first-row,
+.photography-images .second-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.photography-images .first-row img,
+.photography-images .second-row img {
+  width: 40%;
+  max-height: 140px;
+  object-fit: cover;
+}
+
+.photography-images .first-row {
+  margin-bottom: 1rem;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -412,6 +428,10 @@ p.mv-text {
 .marquee {
   display: flex;
   animation: scroll 15s linear infinite;
+}
+
+.marquee.reverse {
+  animation-direction: reverse;
 }
 
 @keyframes scroll {
@@ -608,6 +628,11 @@ p.mv-text {
 
   .ad-ig-icon {
     width: 60px;
+  }
+
+  .photography-images .first-row img,
+  .photography-images .second-row img {
+    max-height: 240px;
   }
 
   .team-members {
