@@ -208,7 +208,7 @@ h1 {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 16px;
-  padding: 20px 10px;
+  padding: 1rem 1.5rem;
   width: 100%;
   -webkit-overflow-scrolling: touch;
   position: relative;
@@ -398,6 +398,8 @@ h1 {
   display: grid;
   gap: 3rem;
   max-width: 800px;
+
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -421,6 +423,7 @@ h1 {
 
 .contact-info {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -434,6 +437,7 @@ h1 {
 
 .social {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -504,12 +508,24 @@ h1 {
     font-size: 16px;
   }
 
-  .footer-row {
-    grid-template-columns: 1fr 1fr;
+  .footer {
+    text-align: left;
   }
 
   .footer-row.row-2 .footer-column.column-1 {
-    order: 2;
+    order: 0;
+  }
+
+  .contact-info {
+    justify-content: left;
+  }
+
+  .social {
+    justify-content: left;
+  }
+
+  .footer-row {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
