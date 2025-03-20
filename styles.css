@@ -302,8 +302,8 @@ h1 {
 
 .team-members {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 2rem;
 }
 
 .team-member {
@@ -320,7 +320,7 @@ h1 {
 
 .team-member h4,
 .team-member p {
-  font-size: 8px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -433,6 +433,11 @@ h1 {
   .client-logos img {
     max-width: 125px;
   }
+
+  .team-members {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .footer-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -507,7 +512,7 @@ h1 {
   }
 
   .team-members {
-    gap: 2rem;
+    gap: 2rem 4rem;
   }
 
   .team-member img {
