@@ -442,6 +442,10 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .story p {
+    font-size: 16px;
+  }
+
   .footer-row {
     grid-template-columns: 1fr 1fr;
   }
