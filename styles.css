@@ -281,6 +281,83 @@ p.mv-text {
   padding: 0 1.5rem;
 }
 
+.ads-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 40%);
+  grid-auto-flow: column;
+  grid-auto-columns: 40%;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  scroll-snap-points-x: repeat(80%);
+  /* Prevent text selection during drag */
+  user-select: none;
+}
+
+/* Hide scrollbar */
+.ads-container::-webkit-scrollbar {
+  display: none;
+}
+
+.ads-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ads-container .ad-item {
+  display: block;
+  /* Prevent link dragging */
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.ads-container .ad-thumbnail {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 25px;
+  scroll-snap-align: start;
+  /* Prevent image dragging */
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+/* For desktop/large screens */
+@media (min-width: 768px) {
+  .ads-container {
+    cursor: grab;
+    scroll-behavior: smooth;
+    gap: 2rem;
+  }
+
+  .ads-container:active {
+    cursor: grabbing;
+  }
+}
+
+/* For mobile */
+@media (max-width: 767px) {
+  .ads-container {
+    cursor: default;
+  }
+}
+
+.ad-item {
+  position: relative;
+}
+
+.ad-ig-icon {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 40px;
+  opacity: 0.8;
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -520,9 +597,17 @@ p.mv-text {
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 570px) {
   .client-logos img {
     max-width: 125px;
+  }
+
+  .ads-container .ad-thumbnail {
+    max-height: 500px;
+  }
+
+  .ad-ig-icon {
+    width: 60px;
   }
 
   .team-members {
