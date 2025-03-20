@@ -244,9 +244,10 @@ h1 {
   overflow: hidden;
   -webkit-user-drag: none; /* Prevent link dragging in Safari/Chrome */
   user-select: none; /* Prevents text selection */
+  position: relative;
 }
 
-.mv-row img {
+.mv-row .mv-thumbnail {
   width: 100%;
   height: auto;
   display: block;
@@ -254,6 +255,30 @@ h1 {
   pointer-events: none; /* Prevents drag conflicts with images */
   -webkit-user-drag: none; /* Prevent image dragging */
   user-select: none; /* Prevents selection */
+  opacity: 0.65;
+  transition: opacity 0.4s;
+}
+
+.mv-link:hover .mv-thumbnail,
+.mv-link:active .mv-thumbnail {
+  opacity: 1;
+}
+
+.mv-row .play-btn {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p.mv-text {
+  font-size: 12px;
+  position: absolute;
+  bottom: 8px;
+  text-align: center;
+  width: 100%;
+  padding: 0 1.5rem;
 }
 
 .swiper-slide {
