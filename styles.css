@@ -328,6 +328,10 @@ h1 {
   padding-bottom: 5rem;
 }
 
+.story p {
+  font-size: 15px;
+}
+
 .story p + p {
   margin-top: 1rem;
 }
