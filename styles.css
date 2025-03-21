@@ -360,21 +360,26 @@ p.mv-text {
   opacity: 0.8;
 }
 
-.photography-images .first-row,
-.photography-images .second-row {
+.marquee .first-row,
+.marquee .second-row {
   display: flex;
   gap: 1rem;
 }
 
-.photography-images .first-row img,
-.photography-images .second-row img {
+.marquee .first-row {
+  margin-bottom: 1rem;
+}
+
+.marquee .first-row img,
+.marquee .second-row img {
   width: 40%;
   max-height: 140px;
   object-fit: cover;
 }
 
-.photography-images .first-row {
-  margin-bottom: 1rem;
+.arts-illus-images .first-row img,
+.arts-illus-images .second-row img {
+  border-radius: 10px;
 }
 
 .swiper-slide {
@@ -430,35 +435,35 @@ p.mv-text {
 
 .marquee {
   display: flex;
-  animation: scroll 15s linear infinite;
+  animation: scroll-arts-illus 12s linear infinite;
 }
 
 .marquee.reverse {
-  animation-direction: reverse;
+  animation: scroll-photo 18s linear infinite;
 }
 
-@keyframes scroll {
+@keyframes scroll-photo {
   0%,
   90%,
   100% {
-    transform: translateX(0);
+    transform: translateX(5%);
   }
   45%,
   55% {
-    transform: translateX(-80%);
+    transform: translateX(-100%);
   }
 }
 
-.arts-illus-images .first-row,
-.arts-illus-images .second-row {
-  display: flex;
-  gap: 1rem;
-}
-
-.arts-illus-images .first-row img,
-.arts-illus-images .second-row img {
-  width: 40%;
-  height: 100%;
+@keyframes scroll-arts-illus {
+  0%,
+  90%,
+  100% {
+    transform: translateX(5%);
+  }
+  45%,
+  55% {
+    transform: translateX(-35%);
+  }
 }
 
 .film-img {
@@ -645,8 +650,8 @@ p.mv-text {
     width: 60px;
   }
 
-  .photography-images .first-row img,
-  .photography-images .second-row img {
+  .marquee .first-row img,
+  .marquee .second-row img {
     max-height: 240px;
   }
 
@@ -718,28 +723,11 @@ p.mv-text {
   .two-item {
     gap: 3rem;
   }
-  .arts-illus-images .first-row img,
-  .arts-illus-images .second-row img {
-    width: 30%;
-    height: 100%;
-  }
 
   .client-logos {
     grid-template-columns: repeat(5, 1fr);
     gap: 3.5rem;
     padding: 2rem;
-  }
-
-  @keyframes scroll {
-    0%,
-    90%,
-    100% {
-      transform: translateX(0);
-    }
-    45%,
-    55% {
-      transform: translateX(-30%);
-    }
   }
 
   .film-img::before,
