@@ -215,7 +215,7 @@ h1 {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   gap: 16px;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem;
   width: 100%;
   -webkit-overflow-scrolling: touch;
   position: relative;
@@ -321,7 +321,6 @@ p.mv-text {
 .ads-container .ad-thumbnail {
   width: 100%;
   height: auto;
-  min-height: 250px;
   max-height: 400px;
   object-fit: cover;
   border-radius: 25px;
@@ -376,7 +375,7 @@ p.mv-text {
 
 .marquee .first-row img,
 .marquee .second-row img {
-  max-height: 200px;
+  max-height: 140px;
   object-fit: cover;
 }
 
@@ -404,6 +403,10 @@ p.mv-text {
 .swiper-slide img,
 .two-item img {
   margin-bottom: 0.75rem;
+}
+
+#clients {
+  padding-top: 1rem;
 }
 
 .swiper-slide img,
