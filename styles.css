@@ -433,7 +433,7 @@ p.mv-text {
   overflow: hidden;
 }
 
-.marquee.photography {
+.marquee.ads {
   animation: scroll-photo 18s linear infinite;
 }
 
