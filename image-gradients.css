@@ -38,11 +38,10 @@
 
 .team.container::before {
   top: 0;
-  height: 25%;
   background: linear-gradient(
     to bottom,
-    #1f2020 0%,
-    rgba(33, 35, 35, 0.8) 30%,
+    #2e3433 0%,
+    rgba(33, 35, 35, 0.9) 20%,
     rgba(33, 35, 35, 0) 100%
   );
 }
