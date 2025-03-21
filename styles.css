@@ -318,7 +318,8 @@ p.mv-text {
 .ads-container .ad-thumbnail {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  min-height: 250px;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 25px;
   scroll-snap-align: start;
@@ -372,8 +373,7 @@ p.mv-text {
 
 .marquee .first-row img,
 .marquee .second-row img {
-  width: 40%;
-  max-height: 140px;
+  max-height: 200px;
   object-fit: cover;
 }
 
@@ -434,12 +434,12 @@ p.mv-text {
 }
 
 .marquee.ads {
-  animation: scroll-photo 18s linear infinite;
+  animation: scroll-photo 20s linear infinite;
 }
 
 .marquee.arts-illus {
   display: flex;
-  animation: scroll-arts-illus 12s linear infinite;
+  animation: scroll-arts-illus 8s linear infinite;
 }
 
 @keyframes scroll-photo {
@@ -450,7 +450,7 @@ p.mv-text {
   }
   45%,
   55% {
-    transform: translateX(-110%);
+    transform: translateX(-220%);
   }
 }
 
@@ -462,7 +462,7 @@ p.mv-text {
   }
   45%,
   55% {
-    transform: translateX(-35%);
+    transform: translateX(-70%);
   }
 }
 
@@ -671,6 +671,30 @@ p.mv-text {
   .marquee .first-row img,
   .marquee .second-row img {
     max-height: 240px;
+  }
+
+  @keyframes scroll-photo {
+    0%,
+    90%,
+    100% {
+      transform: translateX(2%);
+    }
+    45%,
+    55% {
+      transform: translateX(-135%);
+    }
+  }
+
+  @keyframes scroll-arts-illus {
+    0%,
+    90%,
+    100% {
+      transform: translateX(2%);
+    }
+    45%,
+    55% {
+      transform: translateX(-20%);
+    }
   }
 
   .client-logos {
