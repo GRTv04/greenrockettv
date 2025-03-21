@@ -660,6 +660,12 @@ p.mv-text {
     max-width: 125px;
   }
 
+  .ad-item:hover .ad-thumbnail,
+  .ad-item:active .ad-thumbnail {
+    transform: scale(0.975);
+    transition: transform 0.3s;
+  }
+
   .ads-container .ad-thumbnail {
     max-height: 500px;
   }
@@ -726,8 +732,24 @@ p.mv-text {
     justify-content: left;
   }
 
+  .social li {
+    transition: transform 0.3s;
+  }
+
+  .social li:hover {
+    transform: scale(1.1);
+  }
+
   .footer-row {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .powered-by img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .powered-by:hover img {
+    transform: scale(1.25);
   }
 }
 
