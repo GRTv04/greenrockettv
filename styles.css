@@ -827,7 +827,7 @@ p.mv-text {
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 350px) {
   .links a {
     font-size: 0.75rem;
   }
