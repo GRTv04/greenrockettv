@@ -180,7 +180,6 @@ h1 {
 
 .links a {
   color: #fff;
-  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -825,5 +824,11 @@ p.mv-text {
 
   .footer-row {
     gap: 22rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .links a {
+    font-size: 0.75rem;
   }
 }
