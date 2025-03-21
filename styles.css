@@ -479,7 +479,7 @@ p.mv-text {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 0 -10px;
 }
 
@@ -512,15 +512,33 @@ p.mv-text {
   text-align: center;
 }
 
-.story.container {
+.story-bg {
+  background: url(assets/imgs/about-us-bg.png) no-repeat center center/cover;
+  position: relative;
+}
+
+.story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background: #2f2f2f;
+  height: 100%;
+}
+
+.story-content {
+  position: relative;
+}
+
+.story-bg.container {
   padding-bottom: 5rem;
 }
 
-.story p {
+.story-bg p {
   font-size: 15px;
 }
 
-.story p + p {
+.story-bg p + p {
   margin-top: 1rem;
 }
 
@@ -655,12 +673,16 @@ p.mv-text {
     max-height: 240px;
   }
 
+  .client-logos {
+    gap: 2.5rem;
+  }
+
   .team-members {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
   }
 
-  .story p {
+  .story-bg p {
     font-size: 16px;
   }
 
@@ -725,7 +747,6 @@ p.mv-text {
   }
 
   .client-logos {
-    grid-template-columns: repeat(5, 1fr);
     gap: 3.5rem;
     padding: 2rem;
   }
