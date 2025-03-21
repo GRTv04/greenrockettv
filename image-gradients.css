@@ -20,7 +20,7 @@
 .film-img::before {
   background: linear-gradient(
     to bottom,
-    #252525 0%,
+    #313131 0%,
     rgba(33, 35, 35, 0.8) 40%,
     rgba(33, 35, 35, 0) 100%
   );
@@ -30,7 +30,7 @@
   bottom: 0;
   background: linear-gradient(
     to top,
-    #292929 0%,
+    #313333 0%,
     rgba(33, 35, 35, 0.8) 40%,
     rgba(33, 35, 35, 0) 100%
   );
