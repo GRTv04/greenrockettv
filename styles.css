@@ -450,7 +450,7 @@ p.mv-text {
   }
   45%,
   55% {
-    transform: translateX(-100%);
+    transform: translateX(-110%);
   }
 }
 
@@ -485,7 +485,7 @@ p.mv-text {
 
 .team.container {
   background: url(assets/imgs/team-bg.png) no-repeat center center/cover;
-  padding: 10rem 1.5rem 4rem;
+  padding: 6rem 1.5rem 4rem;
 }
 
 .team-members {
