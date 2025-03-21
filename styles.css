@@ -707,9 +707,12 @@ p.mv-text {
   .nav-logo img {
     width: 50px;
   }
+
   .links {
     padding: 1rem;
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .two-item {
