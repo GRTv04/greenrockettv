@@ -44,7 +44,6 @@ h2 {
 }
 
 h3 {
-  margin-top: 1.75rem;
   font-weight: 500;
 }
 
@@ -200,6 +199,10 @@ h1 {
 .swiper {
   width: 100%;
   height: 100%;
+}
+
+.service + .service {
+  margin: 3rem 0;
 }
 
 .music-videos {
@@ -660,10 +663,13 @@ p.mv-text {
     max-width: 125px;
   }
 
+  .ad-thumbnail {
+    transition: transform 0.3s;
+  }
+
   .ad-item:hover .ad-thumbnail,
   .ad-item:active .ad-thumbnail {
     transform: scale(0.975);
-    transition: transform 0.3s;
   }
 
   .ads-container .ad-thumbnail {
@@ -764,7 +770,6 @@ p.mv-text {
   }
 
   h3 {
-    margin-top: 2.25rem;
     font-weight: 500;
   }
 
