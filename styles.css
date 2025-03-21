@@ -433,13 +433,13 @@ p.mv-text {
   overflow: hidden;
 }
 
-.marquee {
-  display: flex;
-  animation: scroll-arts-illus 12s linear infinite;
+.marquee.photography {
+  animation: scroll-photo 18s linear infinite;
 }
 
-.marquee.reverse {
-  animation: scroll-photo 18s linear infinite;
+.marquee.arts-illus {
+  display: flex;
+  animation: scroll-arts-illus 12s linear infinite;
 }
 
 @keyframes scroll-photo {
