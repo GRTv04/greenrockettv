@@ -479,7 +479,7 @@ p.mv-text {
 }
 
 .team.container {
-  background: url(assets/imgs/team-bg.png) no-repeat center center/cover;
+  background: url(assets/imgs/team-bg.webp) no-repeat center center/cover;
   padding: 6rem 1.5rem 4rem;
 }
 
@@ -508,7 +508,7 @@ p.mv-text {
 }
 
 .story-bg {
-  background: url(assets/imgs/about-us-bg.png) no-repeat center center/cover;
+  background: url(assets/imgs/about-us-bg.webp) no-repeat center center/cover;
   position: relative;
 }
 
