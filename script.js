@@ -20,12 +20,6 @@ window.addEventListener("scroll", () => {
   })
 })
 
-const backToTopButton = document.getElementById("backToTop")
-
-window.onscroll = function () {
-  scrollFunction()
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   const sliders = document.querySelectorAll(".mv-row")
 
@@ -40,9 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const itemWidth = firstItem.offsetWidth
         const gap = 16
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           slider.scrollLeft = itemWidth + gap
-        }, 500)
+        })
       }
     }
 
@@ -62,27 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 
-  // Prevent all browser default drag behavior
   document.addEventListener("dragstart", function (e) {
     if (e.target.closest(".mv-row")) {
       e.preventDefault()
       return false
     }
   })
-})
 
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    backToTopButton.classList.add("visible")
-  } else {
-    backToTopButton.classList.remove("visible")
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
+  // Adsvertisement section drag scrolling
   const container = document.querySelector(".ads-container")
   const links = container.querySelectorAll("a")
 
@@ -111,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   container.addEventListener("mouseup", () => {
+    isDragging = false
     container.style.cursor = "grab"
   })
 
@@ -140,6 +122,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 })
+
+const backToTopButton = document.getElementById("backToTop")
+
+window.addEventListener("scroll", scrollFunction)
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 300 ||
+    document.documentElement.scrollTop > 300
+  ) {
+    backToTopButton.classList.add("visible")
+  } else {
+    backToTopButton.classList.remove("visible")
+  }
+}
 
 // Scroll to top when button is clicked
 backToTopButton.addEventListener("click", function () {
