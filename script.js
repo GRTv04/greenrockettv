@@ -24,65 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
-  // Debounce function to limit the frequency of scroll event handling
-  function debounce(func, delay) {
-    let timeoutId
-    return function () {
-      const context = this
-      const args = arguments
-      clearTimeout(timeoutId)
-      timeoutId = setTimeout(() => func.apply(context, args), delay)
-    }
-  }
-
-  // Throttle scroll event to improve performance
-  function createScrollHandler(sections, navLinks) {
-    let previousActiveSection = null
-
-    return function () {
-      let current = null
-
-      // Use more efficient method to find active section
-      for (const section of sections) {
-        const rect = section.getBoundingClientRect()
-        const sectionTop = rect.top
-        const sectionBottom = rect.bottom
-
-        // More precise section detection
-        if (sectionTop <= 100 && sectionBottom >= 100) {
-          current = section.getAttribute("id")
-          break // Exit loop once the correct section is found
-        }
-      }
-
-      // Only update DOM if the active section has changed
-      if (current !== previousActiveSection) {
-        // Use more efficient DOM manipulation
-        navLinks.forEach((link) => {
-          const isActive = link.getAttribute("href") === `#${current}`
-          link.classList.toggle("active", isActive)
-        })
-
-        previousActiveSection = current
-      }
-    }
-  }
-
-  // Initialize the scroll handler with debounce
-  function initializeScrollNavigation(sections, navLinks) {
-    const debouncedScrollHandler = debounce(
-      createScrollHandler(sections, navLinks),
-      50 // 50ms debounce delay
-    )
-
-    window.addEventListener("scroll", debouncedScrollHandler)
-
-    // Optional: Remove event listener when no longer needed
-    return () => {
-      window.removeEventListener("scroll", debouncedScrollHandler)
-    }
-  }
-
   // 🟢 2. Optimized Drag Scrolling for Multiple Containers
   function setupDragScrolling(container) {
     let isDragging = false
