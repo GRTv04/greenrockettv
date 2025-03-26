@@ -82,13 +82,8 @@ h3 {
   font-weight: 500;
 }
 
-h4 {
-  font-size: 0.85rem;
-}
-
 h2,
 h3,
-h4,
 p,
 a {
   color: #fff;
@@ -546,7 +541,7 @@ p.mv-text {
   width: 75px;
 }
 
-.team-member h4,
+.team-member h3,
 .team-member p {
   font-size: 12px;
   text-align: center;
@@ -595,6 +590,11 @@ p.mv-text {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
+}
+
+.copyright-text {
+  font-size: 0.75rem;
+  color: #fff;
 }
 
 .footer-column h2 {
@@ -857,7 +857,7 @@ p.mv-text {
     width: 100px;
   }
 
-  .team-member h4,
+  .team-member h3,
   .team-member p {
     font-size: 14px;
   }
