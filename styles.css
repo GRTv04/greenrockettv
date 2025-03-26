@@ -243,7 +243,7 @@ h1 {
 }
 
 #services {
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
 
 .swiper {
@@ -251,8 +251,13 @@ h1 {
   height: 100%;
 }
 
+.music-videos {
+  padding-bottom: 1.5rem;
+}
+
 .service + .service {
-  margin: 3rem 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .music-videos {
