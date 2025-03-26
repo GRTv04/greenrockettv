@@ -109,7 +109,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Back to Top
   const backToTopButton = document.getElementById("backToTop")
 
-  window.addEventListener("scroll", scrollFunction)
+  let ticking = false
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        scrollFunction()
+        ticking = false
+      })
+      ticking = true
+    }
+  })
 
   function scrollFunction() {
     if (
