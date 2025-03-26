@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 300;
-
+  font-display: swap;
   src: url(/assets/fonts/Montserrat-Light.woff2) format("woff2"),
     url(/assets/fonts/Montserrat-Light.woff) format("woff");
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 500;
-
+  font-display: swap;
   src: url(/assets/fonts/Montserrat-Medium.woff2) format("woff2"),
     url(/assets/fonts/Montserrat-Medium.woff) format("woff");
 }
@@ -27,7 +27,7 @@
 @font-face {
   font-family: "Montserrat";
   font-weight: 700;
-
+  font-display: swap;
   src: url(/assets/fonts/Poppins-Bold.woff2) format("woff2"),
     url(/assets/fonts/Poppins-Bold.woff) format("woff");
 }
@@ -35,7 +35,7 @@
 @font-face {
   font-family: "Poppins";
   font-weight: 700;
-
+  font-display: swap;
   src: url(/assets/fonts/Poppins-Bold.woff2) format("woff2"),
     url(/assets/fonts/Poppins-Bold.woff) format("woff");
 }
