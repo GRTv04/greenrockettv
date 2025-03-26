@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Select elements once for performance
+  const sections = document.querySelectorAll("section")
+  const navLinks = document.querySelectorAll(".nav-link")
   const backToTopButton = document.getElementById("backToTop")
+
+  // 🟢 1. Efficient Active Link Switching with IntersectionObserver
+  window.addEventListener("scroll", activeLink)
+  function activeLink() {
+    let current = ""
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect()
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        current = section.getAttribute("id")
+      }
+    })
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active")
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active")
+      }
+    })
+  }
 
   // 🟢 2. Optimized Drag Scrolling for Multiple Containers
   function setupDragScrolling(container) {
