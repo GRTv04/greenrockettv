@@ -1,26 +1,29 @@
-const sections = document.querySelectorAll("section")
-const navLinks = document.querySelectorAll(".nav-link")
-
-window.addEventListener("scroll", () => {
-  let current = ""
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop
-
-    if (pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute("id")
-    }
-  })
-
-  navLinks.forEach((link) => {
-    link.classList.remove("active")
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active")
-    }
-  })
-})
-
 document.addEventListener("DOMContentLoaded", function () {
+  //Active link switching
+  const sections = document.querySelectorAll("section")
+  const navLinks = document.querySelectorAll(".nav-link")
+
+  window.addEventListener("scroll", activeLink)
+
+  function activeLink() {
+    let current = ""
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect()
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        current = section.getAttribute("id")
+      }
+    })
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active")
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active")
+      }
+    })
+  }
+
+  // Mobile swipe
   const sliders = document.querySelectorAll(".mv-row")
 
   sliders.forEach((slider, index) => {
@@ -67,11 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".ads-container")
   const links = container.querySelectorAll("a")
 
-  // Variables to track dragging
   let isDragging = false
   let startX
   let startScrollLeft
-  let scrollThreshold = 5 // pixels of movement to consider as a drag
+  let scrollThreshold = 5
 
   // Mouse events for desktop
   container.addEventListener("mousedown", (e) => {
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 
   container.addEventListener("mousemove", (e) => {
-    if (e.buttons !== 1) return // Not pressing mouse button
+    if (e.buttons !== 1) return
 
     const dx = e.pageX - startX
     if (Math.abs(dx) > scrollThreshold) {
@@ -96,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     container.style.cursor = "grab"
   })
 
-  // Prevent link clicks if dragging
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       if (isDragging) {
@@ -105,44 +106,28 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 
-  // Touch events for mobile
-  let touchStartX
-  let touchStartScrollLeft
+  // Back to Top
+  const backToTopButton = document.getElementById("backToTop")
 
-  container.addEventListener("touchstart", (e) => {
-    isDragging = false
-    touchStartX = e.touches[0].pageX
-    touchStartScrollLeft = container.scrollLeft
-  })
+  window.addEventListener("scroll", scrollFunction)
 
-  container.addEventListener("touchmove", (e) => {
-    const dx = e.touches[0].pageX - touchStartX
-    if (Math.abs(dx) > scrollThreshold) {
-      isDragging = true
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 300 ||
+      document.documentElement.scrollTop > 300
+    ) {
+      backToTopButton.classList.add("visible")
+    } else {
+      backToTopButton.classList.remove("visible")
     }
-  })
-})
-
-const backToTopButton = document.getElementById("backToTop")
-
-window.addEventListener("scroll", scrollFunction)
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 300 ||
-    document.documentElement.scrollTop > 300
-  ) {
-    backToTopButton.classList.add("visible")
-  } else {
-    backToTopButton.classList.remove("visible")
   }
-}
 
-// Scroll to top when button is clicked
-backToTopButton.addEventListener("click", function () {
-  // For smooth scrolling
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+  // Scroll to top when button is clicked
+  backToTopButton.addEventListener("click", function () {
+    // For smooth scrolling
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   })
 })
