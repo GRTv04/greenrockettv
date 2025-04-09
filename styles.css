@@ -367,7 +367,7 @@ p.mv-text {
   scrollbar-width: none;
 }
 
-.feature-grid .feature-item {
+.feature-grid .feature-card {
   display: block;
   -webkit-user-drag: none;
   user-drag: none;
@@ -385,7 +385,7 @@ p.mv-text {
   pointer-events: none;
 }
 
-.feature-item {
+.feature-card {
   position: relative;
 }
 
