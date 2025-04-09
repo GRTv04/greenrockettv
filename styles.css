@@ -343,7 +343,7 @@ p.mv-text {
   padding: 0 1.5rem;
 }
 
-.ads-container {
+.feature-grid {
   cursor: default;
   display: grid;
   grid-template-columns: repeat(auto-fill, 40%);
@@ -358,22 +358,22 @@ p.mv-text {
   user-select: none;
 }
 
-.ads-container::-webkit-scrollbar {
+.feature-grid::-webkit-scrollbar {
   display: none;
 }
 
-.ads-container {
+.feature-grid {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.ads-container .ad-item {
+.feature-grid .feature-item {
   display: block;
   -webkit-user-drag: none;
   user-drag: none;
 }
 
-.ads-container .ad-thumbnail {
+.feature-grid .ad-thumbnail {
   width: 100%;
   height: auto;
   max-height: 400px;
@@ -385,7 +385,7 @@ p.mv-text {
   pointer-events: none;
 }
 
-.ad-item {
+.feature-item {
   position: relative;
 }
 
@@ -709,7 +709,7 @@ p.mv-text {
     transition: transform 0.3s;
   }
 
-  .ads-container .ad-thumbnail {
+  .feature-grid .ad-thumbnail {
     max-height: 500px;
   }
 
@@ -830,13 +830,13 @@ p.mv-text {
     margin: 0 auto;
   }
 
-  .ads-container {
+  .feature-grid {
     cursor: grab;
     scroll-behavior: smooth;
     gap: 2rem;
   }
 
-  .ads-container:active {
+  .feature-grid:active {
     cursor: grabbing;
   }
 
