@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document
-    .querySelectorAll(".ads-container, .mv-row")
+    .querySelectorAll(".feature-grid, .mv-row")
     .forEach(setupDragScrolling)
 
   // 🟢 3. Prevent Default Drag Behavior for `.mv-row`
