@@ -953,6 +953,11 @@ p.mv-text {
   .hero h2 {
     text-align: left;
   }
+  .footer h1,
+  .footer h2,
+  .footer h3 {
+    text-align: left;
+  }
 
   .hero-content p,
   .story-bg p {
