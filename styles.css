@@ -1,3 +1,8 @@
+:root {
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+}
 /* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
 
 /* @font-face {
@@ -168,7 +173,7 @@ body {
   padding: 0.5rem 1.5rem;
   background-color: #fff;
   color: #000;
-  border-radius: 25px;
+  border-radius: var(--radius-pill);
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -180,6 +185,27 @@ body {
 .sections {
   max-width: 800px;
   margin: 0 auto;
+}
+
+.js .sections > section > div:first-of-type {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .sections > section > div:first-of-type.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.js .services > .service:not(.music-videos) {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .services > .service:not(.music-videos).is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section.container,
@@ -197,6 +223,7 @@ section.container,
   gap: 1rem;
   padding-top: 0.5rem;
 }
+
 
 .nav-logo img {
   width: 40px;
@@ -264,6 +291,23 @@ h1 {
   overflow: hidden;
 }
 
+.music-videos .mv-row {
+  opacity: 0;
+  transition: opacity 0.65s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.music-videos .mv-row:nth-of-type(odd) { transform: translateX(2rem); }
+.music-videos .mv-row:nth-of-type(even) { transform: translateX(-2rem); }
+
+.music-videos.is-visible .mv-row {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.music-videos.is-visible .mv-row:nth-of-type(1) { transition-delay: 0.15s; }
+.music-videos.is-visible .mv-row:nth-of-type(2) { transition-delay: 0.3s; }
+.music-videos.is-visible .mv-row:nth-of-type(3) { transition-delay: 0.45s; }
+
 .mv-row {
   display: flex;
   overflow-x: auto;
@@ -302,7 +346,7 @@ h1 {
   flex: 1 0 auto;
   scroll-snap-align: start;
   width: 300px;
-  border-radius: 8px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   -webkit-user-drag: none; /* Prevent link dragging in Safari/Chrome */
   user-select: none; /* Prevents text selection */
@@ -378,7 +422,7 @@ p.mv-text {
   height: auto;
   max-height: 400px;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: var(--radius-card);
   scroll-snap-align: start;
   -webkit-user-drag: none;
   user-drag: none;
@@ -403,6 +447,17 @@ p.mv-text {
   gap: 1rem;
 }
 
+.marquee {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee > * {
+  flex: 0 0 auto;
+}
+
 .marquee .first-row {
   margin-bottom: 1rem;
 }
@@ -415,10 +470,12 @@ p.mv-text {
 
 .arts-illus-images .first-row img,
 .arts-illus-images .second-row img {
-  border-radius: 10px;
+  border-radius: var(--radius-card);
 }
 
 .swiper-slide {
+  border-radius: var(--radius-card);
+  overflow: hidden;
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -445,12 +502,12 @@ p.mv-text {
 
 .swiper-slide img,
 .client-logos {
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .two-item img {
-  border-radius: 10px;
+  border-radius: var(--radius-card);
 }
 
 .sub-title {
@@ -474,35 +531,19 @@ p.mv-text {
 }
 
 .marquee.ads {
-  animation: scroll-photo 20s linear infinite;
+  animation: marquee-scroll 24s linear infinite;
 }
 
 .marquee.arts-illus {
-  display: flex;
-  animation: scroll-arts-illus 8s linear infinite;
+  animation: marquee-scroll 18s linear infinite;
 }
 
-@keyframes scroll-photo {
-  0%,
-  90%,
-  100% {
-    transform: translateX(5%);
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
   }
-  45%,
-  55% {
-    transform: translateX(-220%);
-  }
-}
-
-@keyframes scroll-arts-illus {
-  0%,
-  90%,
-  100% {
-    transform: translateX(5%);
-  }
-  45%,
-  55% {
-    transform: translateX(-70%);
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
 
@@ -542,7 +583,7 @@ p.mv-text {
 }
 
 .team-member img {
-  border-radius: 50%;
+  border-radius: var(--radius-round);
   width: 75px;
 }
 
@@ -553,21 +594,44 @@ p.mv-text {
 }
 
 .story-bg {
-  background: url(assets/imgs/about-us-bg.webp) no-repeat center center/cover;
+  background: linear-gradient(rgba(20, 22, 22, 0.3), rgba(20, 22, 22, 0.3)), url(assets/imgs/about-us-bg.webp) no-repeat center center/cover;
   position: relative;
 }
 
-.story::before {
+.story-bg::before,
+.story-bg::after {
   content: "";
   position: absolute;
-  inset: 0;
-  opacity: 0.45;
-  background: #2f2f2f;
-  height: 100%;
+  left: 0;
+  right: 0;
+  height: 20%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.story-bg::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    #313131 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
+}
+
+.story-bg::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    #313333 0%,
+    rgba(33, 35, 35, 0.8) 40%,
+    rgba(33, 35, 35, 0) 100%
+  );
 }
 
 .story-content {
   position: relative;
+  z-index: 1;
 }
 
 .story-bg.container {
@@ -661,7 +725,7 @@ p.mv-text {
   color: white;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: var(--radius-round);
   text-align: center;
   line-height: 40px;
   font-size: 20px;
@@ -720,30 +784,6 @@ p.mv-text {
   .marquee .first-row img,
   .marquee .second-row img {
     max-height: 240px;
-  }
-
-  @keyframes scroll-photo {
-    0%,
-    90%,
-    100% {
-      transform: translateX(2%);
-    }
-    45%,
-    55% {
-      transform: translateX(-135%);
-    }
-  }
-
-  @keyframes scroll-arts-illus {
-    0%,
-    90%,
-    100% {
-      transform: translateX(2%);
-    }
-    45%,
-    55% {
-      transform: translateX(-20%);
-    }
   }
 
   .client-logos {
@@ -876,4 +916,23 @@ p.mv-text {
   .links a {
     font-size: 0.75rem;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .sections > section > div:first-of-type,
+  .music-videos .mv-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .marquee {
+    animation: none;
+  }
+
+
 }

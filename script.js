@@ -1,11 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.documentElement.classList.add("js")
   // Select elements once for performance
   const sections = document.querySelectorAll("section")
   const navLinks = document.querySelectorAll(".nav-link")
   const backToTopButton = document.getElementById("backToTop")
 
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting)
+      })
+    },
+    { threshold: 0.12 }
+  )
+
+  document
+    .querySelectorAll(".sections > section > div:first-of-type")
+    .forEach((sectionIntro) => {
+      revealObserver.observe(sectionIntro)
+    })
+  document
+    .querySelectorAll(".services > .service:not(.music-videos)")
+    .forEach((service) => {
+      revealObserver.observe(service)
+    })
+
+  document.querySelectorAll(".marquee").forEach((marquee) => {
+    const track = marquee.firstElementChild
+    if (!track) return
+    const duplicate = track.cloneNode(true)
+    duplicate.setAttribute("aria-hidden", "true")
+    marquee.appendChild(duplicate)
+  })
+
   // 🟢 1. Efficient Active Link Switching with IntersectionObserver
   window.addEventListener("scroll", activeLink)
+
   function activeLink() {
     let current = ""
 
