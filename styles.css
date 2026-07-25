@@ -174,7 +174,9 @@ body {
   background-color: #fff;
   color: #000;
   border-radius: var(--radius-pill);
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .button:hover {
@@ -190,7 +192,9 @@ body {
 .js .sections > section > div:first-of-type {
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .js .sections > section > div:first-of-type.is-visible {
@@ -200,7 +204,9 @@ body {
 .js .services > .service:not(.music-videos) {
   opacity: 0;
   transform: translateY(0.5rem);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .js .services > .service:not(.music-videos).is-visible {
@@ -223,7 +229,6 @@ section.container,
   gap: 1rem;
   padding-top: 0.5rem;
 }
-
 
 .nav-logo img {
   width: 40px;
@@ -292,21 +297,31 @@ h1 {
 }
 
 .music-videos .mv-row {
-  opacity: 0;
-  transition: opacity 0.65s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.music-videos .mv-row:nth-of-type(odd) { transform: translateX(2rem); }
-.music-videos .mv-row:nth-of-type(even) { transform: translateX(-2rem); }
-
-.music-videos.is-visible .mv-row {
   opacity: 1;
   transform: translateX(0);
 }
 
-.music-videos.is-visible .mv-row:nth-of-type(1) { transition-delay: 0.15s; }
-.music-videos.is-visible .mv-row:nth-of-type(2) { transition-delay: 0.3s; }
-.music-videos.is-visible .mv-row:nth-of-type(3) { transition-delay: 0.45s; }
+@media screen and (max-width: 569px) {
+  .js .music-videos .mv-row {
+    opacity: 0;
+    transition:
+      opacity 0.65s ease,
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .js .music-videos .mv-row:nth-of-type(odd) {
+    transform: translateX(2rem);
+  }
+
+  .js .music-videos .mv-row:nth-of-type(even) {
+    transform: translateX(-2rem);
+  }
+
+  .js .music-videos .mv-row.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .mv-row {
   display: flex;
@@ -530,6 +545,80 @@ p.mv-text {
   overflow: hidden;
 }
 
+@media screen and (min-width: 800px) {
+  .photography .marquee-container,
+  .arts-illus .marquee-container {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+  }
+
+  .team.container,
+  .story-bg.container {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 3%,
+      #000 97%,
+      transparent 100%
+    );
+  }
+
+  .advertisements .feature-grid.edge-fade-left {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 100%
+    );
+    mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 100%);
+  }
+
+  .advertisements .feature-grid.edge-fade-right {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 93%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(to right, #000 0%, #000 93%, transparent 100%);
+  }
+
+  .advertisements .feature-grid.edge-fade-left.edge-fade-right {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+  }
+}
 .marquee.ads {
   animation: marquee-scroll 24s linear infinite;
 }
@@ -594,7 +683,9 @@ p.mv-text {
 }
 
 .story-bg {
-  background: linear-gradient(rgba(20, 22, 22, 0.3), rgba(20, 22, 22, 0.3)), url(assets/imgs/about-us-bg.webp) no-repeat center center/cover;
+  background:
+    linear-gradient(rgba(20, 22, 22, 0.3), rgba(20, 22, 22, 0.3)),
+    url(assets/imgs/about-us-bg.webp) no-repeat center center/cover;
   position: relative;
 }
 
@@ -604,7 +695,7 @@ p.mv-text {
   position: absolute;
   left: 0;
   right: 0;
-  height: 20%;
+  height: 10%;
   pointer-events: none;
   z-index: 0;
 }
@@ -613,8 +704,8 @@ p.mv-text {
   top: 0;
   background: linear-gradient(
     to bottom,
-    #313131 0%,
-    rgba(33, 35, 35, 0.8) 40%,
+    #282e2c 0%,
+    rgba(33, 35, 35, 0.6) 30%,
     rgba(33, 35, 35, 0) 100%
   );
 }
@@ -623,8 +714,8 @@ p.mv-text {
   bottom: 0;
   background: linear-gradient(
     to top,
-    #313333 0%,
-    rgba(33, 35, 35, 0.8) 40%,
+    #1d1d1d 0%,
+    rgba(33, 35, 35, 0.6) 30%,
     rgba(33, 35, 35, 0) 100%
   );
 }
@@ -731,7 +822,9 @@ p.mv-text {
   font-size: 20px;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s, background-color 0.3s;
+  transition:
+    opacity 0.3s,
+    background-color 0.3s;
   z-index: 1000;
   border: none;
   outline: none;
@@ -752,6 +845,18 @@ p.mv-text {
   }
 }
 
+@media screen and (max-width: 799px) {
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .hero p,
+  .story-bg p {
+    text-align: justify;
+  }
+}
 @media screen and (min-width: 570px) {
   .button {
     padding: 0.75rem 2.25rem;
@@ -837,6 +942,54 @@ p.mv-text {
 }
 
 @media screen and (min-width: 800px) {
+  /* Desktop layout and Story gradient controls */
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  .hero h1,
+  .hero h2 {
+    text-align: left;
+  }
+
+  .hero-content p,
+  .story-bg p {
+    text-align: justify;
+  }
+
+  .story-bg.container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .story-bg::before,
+  .story-bg::after {
+    height: 10%;
+  }
+
+  /* Adjust these desktop Story colors independently from mobile. */
+  .story-bg::before {
+    background: linear-gradient(
+      to bottom,
+      #222524 0%,
+      rgba(33, 35, 35, 0.6) 30%,
+      rgba(33, 35, 35, 0) 100%
+    );
+  }
+
+  .story-bg::after {
+    background: linear-gradient(
+      to top,
+      #1e1e1e 0%,
+      rgba(33, 35, 35, 0.6) 30%,
+      rgba(33, 35, 35, 0) 100%
+    );
+  }
+  #contact {
+    background: #1e1e1e;
+  }
   h2 {
     font-size: 1.25rem;
   }
@@ -933,6 +1086,4 @@ p.mv-text {
   .marquee {
     animation: none;
   }
-
-
 }

@@ -25,6 +25,31 @@ document.addEventListener("DOMContentLoaded", function () {
       revealObserver.observe(service)
     })
 
+  // Reveal music-video rows individually as they enter the viewport on mobile.
+  const mobileMusicVideoRows = document.querySelectorAll(
+    ".music-videos .mv-row"
+  )
+
+  if (window.matchMedia("(max-width: 569px)").matches) {
+    const musicVideoRowObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+
+          entry.target.classList.add("is-visible")
+          observer.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.15 }
+    )
+
+    mobileMusicVideoRows.forEach((row) => {
+      musicVideoRowObserver.observe(row)
+    })
+  } else {
+    mobileMusicVideoRows.forEach((row) => row.classList.add("is-visible"))
+  }
+
   document.querySelectorAll(".marquee").forEach((marquee) => {
     const track = marquee.firstElementChild
     if (!track) return
@@ -92,6 +117,36 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   }
 
+  function updateAdvertisementEdgeFade(container) {
+    if (!container.classList.contains("feature-grid")) return
+
+    const maxScrollLeft = container.scrollWidth - container.clientWidth
+    const hasOverflow = maxScrollLeft > 1
+
+    container.classList.toggle("edge-fade-left", hasOverflow && container.scrollLeft > 1)
+    container.classList.toggle(
+      "edge-fade-right",
+      hasOverflow && container.scrollLeft < maxScrollLeft - 1
+    )
+  }
+
+  document.querySelectorAll(".feature-grid").forEach((container) => {
+    updateAdvertisementEdgeFade(container)
+    container.addEventListener("scroll", () => {
+      updateAdvertisementEdgeFade(container)
+    })
+  })
+
+  window.addEventListener("load", () => {
+    document
+      .querySelectorAll(".feature-grid")
+      .forEach(updateAdvertisementEdgeFade)
+  })
+  window.addEventListener("resize", () => {
+    document
+      .querySelectorAll(".feature-grid")
+      .forEach(updateAdvertisementEdgeFade)
+  })
   document
     .querySelectorAll(".feature-grid, .mv-row")
     .forEach(setupDragScrolling)
